@@ -1,8 +1,8 @@
-import pypdf
+import pypdf # type: ignore
 import os
 from dotenv import load_dotenv
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from openai import OpenAI
+from langchain.text_splitter import RecursiveCharacterTextSplitter # type: ignore
+from openai import OpenAI # type: ignore
 import time
 import pickle
 
@@ -18,6 +18,8 @@ chunk_size = 1000
 chunk_overlap = 150 # Overlap helps maintain context between chunks
 
 openai_api_key = os.getenv("OPENAI_API_KEY")
+
+
 
 # --------------- LOGIC ---------------
 # --------------- PDF Loading Logic ---------------
