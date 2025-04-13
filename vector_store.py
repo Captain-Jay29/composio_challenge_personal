@@ -1,8 +1,8 @@
-import pickle
 import os
 import uuid
 from dotenv import load_dotenv
 from qdrant_client import QdrantClient, models
+import fickling
 
 # --- Configuration ---
 load_dotenv()
@@ -20,7 +20,7 @@ def load_data_from_pickle(file_path):
         print(f"\nLoading cached data from: {file_path}")
         try:
             with open(file_path, 'rb') as f:
-                data = pickle.load(f)
+                data = fickling.load(f)
             print(f"Successfully loaded {len(data)} items from cache.")
             if isinstance(data, list) and len(data) > 0 and 'text' in data[0] and 'embedding' in data[0]:
                  first_embedding_dim = len(data[0]['embedding'])
